@@ -1,0 +1,9 @@
+@import '../styles/variables.scss';
+
+.home-page {
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: $primary-color;
+  }
+}

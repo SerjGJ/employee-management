@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.home-page,
+.edit-employee-page {
+  padding: 20px;
+}
+
+.employee-list {
+  margin-bottom: 20px;
+}
+
+.employee-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  background-color: #fff;
+
+  a {
+    text-decoration: none;
+    color: #000;
+
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+.employee-form,
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  input,
+  select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  button {
+    padding: 10px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+}

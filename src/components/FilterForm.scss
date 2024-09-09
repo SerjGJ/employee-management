@@ -1,0 +1,32 @@
+@import '../styles/variables';
+
+.filter-form {
+  margin-bottom: 20px;
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    select {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid $border-color;
+      background-color: $background-color;
+      color: $text-color;
+      font-family: $font-family;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: $font-family;
+
+      input[type='checkbox'] {
+        accent-color: $primary-color;
+        cursor: pointer;
+      }
+    }
+  }
+}
