@@ -6,11 +6,17 @@ import './EmployeeList.scss'
 const EmployeeList = () => {
   const employees = useSelector((state) => state.employees.list)
   const filter = useSelector((state) => state.employees.filter)
-
   const [sortBy, setSortBy] = useState('name')
-  const sortByName = (a, b) => a.name.localeCompare(b.name)
 
-  const sortByBirthday = (a, b) => new Date(a.birthday) - new Date(b.birthday)
+  const parseDate = (dateStr) => {
+    const [day, month, year] = dateStr.split('.')
+    return new Date(`${year}-${month}-${day}`)
+  }
+
+  const sortFunctions = {
+    name: (a, b) => a.name.localeCompare(b.name),
+    birthday: (a, b) => parseDate(a.birthday) - parseDate(b.birthday),
+  }
 
   const filteredEmployees = employees.filter(
     (employee) =>
@@ -18,9 +24,7 @@ const EmployeeList = () => {
       (!filter.isArchive || employee.isArchive === filter.isArchive)
   )
 
-  const sortedEmployees = [...filteredEmployees].sort(
-    sortBy === 'name' ? sortByName : sortByBirthday
-  )
+  const sortedEmployees = [...filteredEmployees].sort(sortFunctions[sortBy])
 
   return (
     <div className="employee-list">
